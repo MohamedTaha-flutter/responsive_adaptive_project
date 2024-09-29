@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_adaptive_simple_project/widget/custom_list_tablet.dart';
 import 'package:responsive_adaptive_simple_project/widget/sliver_grid_widget.dart';
 import 'package:responsive_adaptive_simple_project/widget/sliver_list_widget.dart';
 
@@ -8,26 +9,26 @@ class HomeBodyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: LayoutBuilder(builder: (context, constrains) {
               print(constrains.maxWidth);
               if (constrains.maxWidth >= 600) {
-                return Text("Taplet Layout");
+                return const CustomListTablet();
               }else 
               {
-                return SliverGridWidget();
+                return const SliverGridWidget();
               }
             }),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 15,
             ),
           ),
-          SliverListWidget()
+          const SliverListWidget()
         ],
       ),
     );
