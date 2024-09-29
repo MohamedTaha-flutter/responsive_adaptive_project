@@ -20,10 +20,10 @@ class CustomDrawerWidget extends StatelessWidget {
           ),
           ListView.builder(
             shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) => DrawerDataWidget(
-                    model: drawerData[index],
-                  ),
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) => DrawerDataWidget(
+              model: drawerData[index],
+            ),
             itemCount: drawerData.length,
           ),
         ],
@@ -32,12 +32,9 @@ class CustomDrawerWidget extends StatelessWidget {
   }
 }
 
-List<DrawerModel> drawerData =
-[
+List<DrawerModel> drawerData = [
   DrawerModel(icon: const Icon(Icons.home), title: "D A S H B O A R A D"),
   DrawerModel(icon: const Icon(Icons.settings), title: "S E T T I N G"),
   DrawerModel(icon: const Icon(Icons.info), title: "A B O U T "),
   DrawerModel(icon: const Icon(Icons.logout), title: "L O G O U T"),
-] ;
-
-
+];

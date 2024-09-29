@@ -7,11 +7,21 @@ class HomeBodyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.all(10.0),
       child: CustomScrollView(
         slivers: [
-          SliverGridWidget(),
+          SliverToBoxAdapter(
+            child: LayoutBuilder(builder: (context, constrains) {
+              print(constrains.maxWidth);
+              if (constrains.maxWidth >= 600) {
+                return Text("Taplet Layout");
+              }else 
+              {
+                return SliverGridWidget();
+              }
+            }),
+          ),
           SliverToBoxAdapter(
             child: SizedBox(
               height: 15,
